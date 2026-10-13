@@ -11,8 +11,41 @@
     <p>Welcome to the prototype.</p>
     <p>Player choices will eventually affect each other's stories.</p>
 
-    <button>Enter the Forest</button>
-    <button>Enter the River</button>
+
+    <button id="forestButton">Enter the forest</button>
+    <button id="riverButton">Follow the river</button>
+
+    <p id="storyText">You arrive at a crossroads. Which path will you choose?</p>
+
+    <p id="choiceText">You haven't made a choice yet.</p>
+
+
+
+
+
+    <script>
+        const forestButton = document.getElementById("forestButton");
+        const riverButton = document.getElementById("riverButton");
+        const storyText = document.getElementById("storyText");
+        const choiceText = document.getElementById("choiceText");
+
+        let playerChoice = "";
+
+        forestButton.addEventListener("click",
+        function () {
+        playerChoice = "forest";
+        storyText.textContent = "You enter the dark forest. Something moves between the trees.";
+        choiceText.textContent = "You chose the forest path.";}
+        );
+
+        riverButton.addEventListener("click",
+        function () {
+        playerChoice = "river";
+        storyText.textContent = "You follow the river and discover an abandoned wooden boat.";
+        choiceText.textContent = "You chose the river path.";}
+        );
+    </script>
+</body>
 
 </body>
 </html>
