@@ -7,6 +7,8 @@
     <title>AT2026 Cloud computing prototype</title>
 </head>
 <body>
+
+    <!-- Story text and buttons-->
     <h1>Two Stories, One Connection</h1>
     <p>Welcome to the prototype.</p>
     <p>Player choices will eventually affect each other's stories.</p>
@@ -21,31 +23,19 @@
 
 
 
+    <!-- show status of cloud data-->
+    <h2>Saved cloud choices</h2>
+    <button id="loadChoicesButton">Load saved choices</button>
+    <p id="cloudStatus">Cloud data has not been loaded yet.</p>
+    <ul id="savedChoices"></ul>
 
 
-    <script>
-        const forestButton = document.getElementById("forestButton");
-        const riverButton = document.getElementById("riverButton");
-        const storyText = document.getElementById("storyText");
-        const choiceText = document.getElementById("choiceText");
 
-        let playerChoice = "";
+    <!-- Connect to Supabase JavaScript Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-        forestButton.addEventListener("click",
-        function () {
-        playerChoice = "forest";
-        storyText.textContent = "You enter the dark forest. Something moves between the trees.";
-        choiceText.textContent = "You chose the forest path.";}
-        );
-
-        riverButton.addEventListener("click",
-        function () {
-        playerChoice = "river";
-        storyText.textContent = "You follow the river and discover an abandoned wooden boat.";
-        choiceText.textContent = "You chose the river path.";}
-        );
-    </script>
+    <!-- External script for app logic -->
+    <script src="js/main.js"></script>
 </body>
 
-</body>
 </html>
